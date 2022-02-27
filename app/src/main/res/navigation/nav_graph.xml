@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_search_fragment">
+
+    <fragment
+        android:id="@+id/home_search_fragment"
+        android:name="com.hakansoft.polishdictionary.HomeSearchFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_search">
+
+        <action android:id="@+id/searchAction"
+            app:destination="@+id/search_result_list_fragment">
+            <argument
+                android:name="searchTerm"
+                app:argType="string" />
+            <argument
+                android:name="partOfSpeech"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_result_list_fragment"
+        android:name="com.hakansoft.polishdictionary.SearchResultListFragment"
+        android:label="Search Results"
+        tools:layout="@layout/fragment_search_result_list">
+        <argument
+            android:name="searchTerm"
+            app:argType="string" />
+        <argument
+            android:name="partOfSpeech"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

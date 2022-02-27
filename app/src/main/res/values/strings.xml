@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">PolishDictionary</string>
     <string name="app_title">Polish &lt;-&gt; English Dictionary</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="parts_of_speech">
+        <item>all</item>
+        <item>noun</item>
+        <item>verb</item>
+        <item>adj</item>
+        <item>adverb</item>
+        <item>prep</item>
+        <item>prefix</item>
+        <item>conj</item>
+        <item>interj</item>
+        <item>number</item>
+        <item>pronoun</item>
+        <item>onomat</item>
+        <item>exclam</item>
+        <item>suffix</item>
+    </string-array>
 </resources>

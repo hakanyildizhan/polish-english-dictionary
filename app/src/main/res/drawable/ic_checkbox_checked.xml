@@ -1,16 +1,26 @@
-<vector android:height="24dp"
-    android:viewportHeight="500"
-    android:viewportWidth="500"
-    android:width="24dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="30dp"
+    android:height="30dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
 
-    <path android:fillColor="#DED00303" android:fillType="nonZero"
-        android:pathData="M217.205,277.115L156.624,213.988L119.266,252.916L217.205,354.969L381.194,184.091L343.836,145.163z"
-        android:strokeColor="#DED00303" android:strokeLineCap="butt"
-        android:strokeLineJoin="miter" android:strokeWidth="0"/>
+    <group>
+        <clip-path
+            android:pathData="M12 0H18C24.6274 0 30 5.37258 30 12V18C30 24.6274 24.6274 30 18 30H12C5.37258 30 0 24.6274 0 18V12C0 5.37258 5.37258 0 12 0Z"
+            />
+        <path
+            android:pathData="M0 0V30H30V0"
+            />
+        <path
+            android:pathData="M12 0H18C24.6274 0 30 5.37258 30 12V18C30 24.6274 24.6274 30 18 30H12C5.37258 30 0 24.6274 0 18V12C0 5.37258 5.37258 0 12 0Z"
+            android:strokeWidth="6"
+            android:strokeColor="#DED00303"
+            />
 
-    <path android:fillColor="#00000000" android:fillType="nonZero"
-        android:pathData="M15.82,111.021C15.82,58.194 58.654,15.37 111.493,15.37L388.947,15.37L388.947,15.37C441.786,15.37 484.62,58.194 484.62,111.021L484.62,388.919L484.62,388.919C484.62,441.746 441.786,484.57 388.947,484.57L111.493,484.57L111.493,484.57C58.654,484.57 15.82,441.746 15.82,388.919z"
-        android:strokeColor="#DED00303" android:strokeLineCap="butt"
-        android:strokeLineJoin="miter" android:strokeWidth="30"/>
+        <group android:translateX="-4.5" android:translateY="-5" android:scaleX="1.6" android:scaleY="1.6">
+            <path android:fillColor="#DED00303" android:strokeColor="#DED00303" android:strokeWidth="0" android:strokeLineCap="butt" android:strokeLineJoin="miter" android:strokeMiterLimit="4" android:fillType="nonZero" android:pathData="M 11 13.586 L 8.707 11.293 L 7.293000000000001 12.706999999999999 L 11 16.414 L 17.207 10.207 L 15.793000000000001 8.793000000000001 z"/>
+        </group>
+
+    </group>
+
 </vector>

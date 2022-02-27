@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="red">#DED00303</color>
+    <color name="red_alt">#D62424</color>
+    <color name="red_light">#33D00303</color>
 </resources>
