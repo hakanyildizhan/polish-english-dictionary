@@ -1,6 +1,7 @@
 buildscript {
     ext.nav_version = "2.3.5"
     ext.ktx_version = "2.4.0"
+    ext.kotlin_version = "1.6.10"
 
     repositories {
         google()
@@ -9,7 +10,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,6 +19,9 @@ buildscript {
         // app will use view binding to reference its views,
         // and the Navigation component to navigate between its fragments
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        // for parsing JSON
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
     }
 }
 
@@ -25,7 +29,8 @@ buildscript {
 plugins {
     id 'com.android.application' version '7.1.0' apply false
     id 'com.android.library' version '7.1.0' apply false
-    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+    //id 'org.jetbrains.kotlin.multiplatform' version '1.6.10' apply true
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10' apply true
 }
 
 task clean(type: Delete) {

@@ -20,6 +20,7 @@
             <argument
                 android:name="partOfSpeech"
                 app:argType="string" />
+
         </action>
 
     </fragment>
@@ -34,7 +35,12 @@
             app:argType="string" />
         <argument
             android:name="partOfSpeech"
-            app:argType="string" />
+            app:argType="string"
+            android:defaultValue="all" />
+        <argument
+            android:name="ignoreDiacritics"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
 
 </navigation>

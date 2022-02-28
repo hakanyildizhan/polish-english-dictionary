@@ -13,6 +13,16 @@ import com.hakansoft.polishdictionary.databinding.FragmentSearchResultListBindin
 
 class SearchResultListFragment : Fragment() {
 
+    companion object {
+        fun getApiCaller(context: String): IApiCaller {
+            return when (context) {
+                "app" -> LektorekApiCaller()
+                "test" -> MockApiCaller()
+                else -> throw Exception("Invalid context")
+            }
+        }
+    }
+
     val args: SearchResultListFragmentArgs by navArgs()
     private val sharedTopBarViewModel: TopBarViewModel by activityViewModels()
 
@@ -28,15 +38,30 @@ class SearchResultListFragment : Fragment() {
 
         val searchTerm = args.searchTerm
         val partOfSpeech = args.partOfSpeech
+        val ignoreDiacritics = args.ignoreDiacritics
+
+        val apiCaller: IApiCaller = getApiCaller("app")
+        var apiResponse = apiCaller.getDefinitions(searchTerm, ignoreDiacritics, partOfSpeech)
+
+        var definitions = mutableListOf<List<HtmlDefinition>>()
+        for (result in apiResponse!!.results) {
+            definitions.add(HtmlDefinitionParser.parse(result.embeddedDefinition))
+        }
+
+        binding = FragmentSearchResultListBinding.inflate(inflater, container, false)
+
+        sharedTopBarViewModel.mainText.observe(viewLifecycleOwner) { mainText ->
+            binding!!.include1.header.setText(mainText)
+        }
+
+        sharedTopBarViewModel.altText.observe(viewLifecycleOwner) { altText ->
+            binding!!.include1.subHeader.setText(altText)
+        }
 
         sharedTopBarViewModel.setMainText("Results for \"${searchTerm}\"")
-        sharedTopBarViewModel.setAltText("4 results found")
-        //var topbarVM = TopBarViewModel("Results for \"${searchTerm}\"", "4 results found")
+        sharedTopBarViewModel.setAltText("${apiResponse!!.totalEntriesFound} results found")
 
-
-        val fragmentBinding = FragmentSearchResultListBinding.inflate(inflater, container, false)
-        binding = fragmentBinding
-        return fragmentBinding.root
+        return binding!!.root
 
         //R.layout.fragment_topbar.
 
@@ -59,5 +84,7 @@ class SearchResultListFragment : Fragment() {
             // Assign the fragment
             searchResultListFragment = this@SearchResultListFragment
         }
+
+
     }
 }
