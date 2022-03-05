@@ -1,7 +1,7 @@
 package com.hakansoft.polishdictionary
 
 class MockApiCaller : IApiCaller {
-    override fun getDefinitions(
+    override suspend fun getDefinitions(
         searchTerm: String,
         ignoreDiacritics: Boolean,
         partOfSpeech: String

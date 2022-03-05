@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.hakansoft.polishdictionary.databinding.FragmentSearchResultListBinding
+import kotlinx.coroutines.*
 
 class SearchResultListFragment : Fragment() {
 
@@ -40,15 +40,9 @@ class SearchResultListFragment : Fragment() {
         val partOfSpeech = args.partOfSpeech
         val ignoreDiacritics = args.ignoreDiacritics
 
-        val apiCaller: IApiCaller = getApiCaller("app")
-        var apiResponse = apiCaller.getDefinitions(searchTerm, ignoreDiacritics, partOfSpeech)
-
-        var definitions = mutableListOf<List<HtmlDefinition>>()
-        for (result in apiResponse!!.results) {
-            definitions.add(HtmlDefinitionParser.parse(result.embeddedDefinition))
-        }
-
+        //var definitions = mutableListOf<List<HtmlDefinition>>()
         binding = FragmentSearchResultListBinding.inflate(inflater, container, false)
+        //binding!!.lifecycleOwner = this
 
         sharedTopBarViewModel.mainText.observe(viewLifecycleOwner) { mainText ->
             binding!!.include1.header.setText(mainText)
@@ -58,17 +52,37 @@ class SearchResultListFragment : Fragment() {
             binding!!.include1.subHeader.setText(altText)
         }
 
-        sharedTopBarViewModel.setMainText("Results for \"${searchTerm}\"")
-        sharedTopBarViewModel.setAltText("${apiResponse!!.totalEntriesFound} results found")
+        sharedTopBarViewModel.definitions.observe(viewLifecycleOwner) { definitions ->
+            binding!!.definitions.adapter = ListSelectionRecyclerViewAdapter(requireContext(), definitions)
+        }
+
+        binding!!.topbarViewModel = sharedTopBarViewModel
+        binding!!.topbarViewModel!!.setIsLoading(true)
+
+        val apiCaller: IApiCaller = getApiCaller("app")
+        var totalFound: Int = 0;
+        var definitions = mutableListOf<List<HtmlDefinition>>()
+
+        GlobalScope.launch {
+            val apiResponse = withContext(Dispatchers.Default) {
+                apiCaller.getDefinitions(searchTerm, ignoreDiacritics, partOfSpeech)
+            }
+
+            for (result in apiResponse!!.results) {
+                definitions.add(HtmlDefinitionParser.parse(result.embeddedDefinition))
+            }
+
+            totalFound = Integer.parseInt(apiResponse!!.totalEntriesFound);
+            binding!!.topbarViewModel!!.setDefinitions(definitions)
+            binding!!.topbarViewModel!!.setMainText("Results for \"${searchTerm}\"")
+            binding!!.topbarViewModel!!.setAltText("${totalFound} results found")
+            binding!!.topbarViewModel!!.setIsLoading(false)
+        }
+
+        binding!!.definitions.layoutManager = LinearLayoutManager(requireContext())
+        binding!!.definitions.adapter = ListSelectionRecyclerViewAdapter(requireContext(), definitions)
 
         return binding!!.root
-
-        //R.layout.fragment_topbar.
-
-        //val listview: ListView? = view?.findViewById(R.id.definitions);
-
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_search_result_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -84,7 +98,5 @@ class SearchResultListFragment : Fragment() {
             // Assign the fragment
             searchResultListFragment = this@SearchResultListFragment
         }
-
-
     }
 }

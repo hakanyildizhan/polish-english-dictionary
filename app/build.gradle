@@ -7,6 +7,7 @@ plugins {
 
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 
 }
 
@@ -69,6 +70,7 @@ dependencies {
 
     // to make rest API calls
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'ru.gildor.coroutines:kotlin-coroutines-okhttp:1.0'
 
     // for parsing JSON
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"

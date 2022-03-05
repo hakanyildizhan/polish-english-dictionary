@@ -1,23 +1,25 @@
 package com.hakansoft.polishdictionary
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class SearchResult(
-    @SerializedName("id")
+    @SerialName("id")
     val id: Int,
 
-    @SerializedName("headword")
+    @SerialName("headword")
     val headword: String,
 
-    @SerializedName("embedded_definition")
+    @SerialName("embedded_definition")
     val embeddedDefinition: String,
 
-    @SerializedName("crossreferences")
+    @SerialName("crossreferences")
     val crossReferences: String,
 
-    @SerializedName("rank")
+    @SerialName("rank")
     val rank: Int,
 
-    @SerializedName("highlights")
+    @SerialName("highlights")
     val highlights: String
 )

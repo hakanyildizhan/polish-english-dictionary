@@ -1,38 +1,40 @@
 package com.hakansoft.polishdictionary
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class SearchResponse(
-    @SerializedName("total_entries_found")
+    @SerialName("total_entries_found")
     val totalEntriesFound: String,
 
-    @SerializedName("total_pages_found")
+    @SerialName("total_pages_found")
     val totalPagesFound: Int,
 
-    @SerializedName("current_page")
+    @SerialName("current_page")
     val currentPage: Int,
 
-    @SerializedName("current_page_size")
+    @SerialName("current_page_size")
     val currentPageSize: Int,
 
-    @SerializedName("current_entries_found")
+    @SerialName("current_entries_found")
     val currentEntriesFound: Int,
 
-    @SerializedName("has_next_page")
+    @SerialName("has_next_page")
     val hasNextPage: Boolean,
 
-    @SerializedName("next_page")
+    @SerialName("next_page")
     val nextPage: Int,
 
-    @SerializedName("found_as")
+    @SerialName("found_as")
     val foundAs: String,
 
-    @SerializedName("user_search_string")
+    @SerialName("user_search_string")
     val userSearchString: String,
 
-    @SerializedName("search_model")
+    @SerialName("search_model")
     val searchModel: String,
 
-    @SerializedName("results")
+    @SerialName("results")
     val results: List<SearchResult>
 )

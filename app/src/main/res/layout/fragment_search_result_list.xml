@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,49 +13,76 @@
             name="searchResultListFragment"
             type="com.hakansoft.polishdictionary.SearchResultListFragment" />
 
+        <import type="android.view.View"/>
+
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".SearchResultListFragment">
+        tools:context=".SearchResultListFragment"
+        >
 
-        <LinearLayout
-            android:id="@+id/topbar"
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:visibility="@{topbarViewModel.isLoading ? View.VISIBLE : View.GONE}"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <include
-                android:id="@+id/include1"
-                layout="@layout/fragment_topbar"
-                />
-
-        </LinearLayout>
-
-
-        <ListView
-            android:id="@+id/definitions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/topbar">
-
-
-
-        </ListView>
-
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/red"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_height="match_parent"
+            android:id="@+id/content"
+            android:orientation="vertical"
+            android:visibility="@{topbarViewModel.isLoading ? View.GONE : View.VISIBLE}"
+            >
 
-            <include
-                android:id="@+id/include2"
-                layout="@layout/fragment_bottombar"/>
+            <LinearLayout
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+                <include
+                    android:id="@+id/include1"
+                    layout="@layout/fragment_topbar"
+                    />
+
+            </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/definitions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:layout_gravity="fill_vertical"
+                    android:layout_weight="1"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/bottombar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+
+                >
+
+                <include
+                    android:id="@+id/include2"
+                    layout="@layout/fragment_bottombar"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
