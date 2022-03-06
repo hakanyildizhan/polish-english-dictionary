@@ -70,6 +70,9 @@
                     android:textSize="20sp"
                     android:fontFamily="@font/jura_semibold"
                     android:text="pisać"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:inputType="text"
                     />
 
             </RelativeLayout>

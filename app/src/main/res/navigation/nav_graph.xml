@@ -22,6 +22,10 @@
                 app:argType="string" />
 
         </action>
+        <argument
+            android:name="focusOnSearchbox"
+            app:argType="boolean"
+            android:defaultValue="false" />
 
     </fragment>
 
@@ -44,7 +48,11 @@
 
         <action
             android:id="@+id/action_bottombarFragment_to_home_search_fragment"
-            app:destination="@id/home_search_fragment" />
+            app:destination="@id/home_search_fragment" >
+            <argument
+                android:name="focusOnSearchbox"
+                android:defaultValue="true" />
+        </action>
     </fragment>
 
 </navigation>
