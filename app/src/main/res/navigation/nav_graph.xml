@@ -41,6 +41,10 @@
             android:name="ignoreDiacritics"
             app:argType="boolean"
             android:defaultValue="false" />
+
+        <action
+            android:id="@+id/action_bottombarFragment_to_home_search_fragment"
+            app:destination="@id/home_search_fragment" />
     </fragment>
 
 </navigation>

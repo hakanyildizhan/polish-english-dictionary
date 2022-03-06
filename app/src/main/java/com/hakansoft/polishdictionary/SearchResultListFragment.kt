@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hakansoft.polishdictionary.databinding.FragmentSearchResultListBinding
@@ -40,9 +42,14 @@ class SearchResultListFragment : Fragment() {
         val partOfSpeech = args.partOfSpeech
         val ignoreDiacritics = args.ignoreDiacritics
 
-        //var definitions = mutableListOf<List<HtmlDefinition>>()
         binding = FragmentSearchResultListBinding.inflate(inflater, container, false)
-        //binding!!.lifecycleOwner = this
+
+        var bottomSearchButton: ImageView = binding!!.include2.buttonSearch
+        bottomSearchButton.bringToFront()
+        bottomSearchButton.setOnClickListener {
+            val action = SearchResultListFragmentDirections.actionBottombarFragmentToHomeSearchFragment()
+            findNavController().navigate(action)
+        }
 
         sharedTopBarViewModel.mainText.observe(viewLifecycleOwner) { mainText ->
             binding!!.include1.header.setText(mainText)
