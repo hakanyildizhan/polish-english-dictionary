@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable-v24/checkbox.xml" value="0.253" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable-v24/ic_checkbox_unchecked.xml" value="0.253" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable/button_round.xml" value="0.253" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable/checkbox2.xml" value="0.253" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable/edittext2.xml" value="0.253" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable/ic_back_arrow.xml" value="0.2295" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/drawable/ic_checkbox_checked.xml" value="0.264" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_bookmarks.xml" value="0.25416666666666665" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_bottombar.xml" value="0.176" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_home_search.xml" value="0.1" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_search_history.xml" value="0.24456521739130435" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_search_history_row.xml" value="0.536" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_search_result_list.xml" value="0.2" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_search_result_row.xml" value="0.4" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_topbar.xml" value="0.264" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/layout/fragment_topbar_w_back_button.xml" value="0.2" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1565" />
+        <entry key="..\:/GIT/polish-english-dictionary/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1565" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable-v24/ic_checkbox_unchecked.xml" value="0.2235" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2095" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/button_round.xml" value="0.2235" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/checkbox.xml" value="0.2235" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/downarrow.xml" value="0.1565" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/edittext2.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/gradient_spinner.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_bookmark.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_checkbox_checked.xml" value="0.2235" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_down_arrow.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_history.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2095" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/ic_search.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/spinner.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/drawable/spinner_style.xml" value="0.2595" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/font/barlow.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/font/font_jura.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/font/font_jura_regular.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/font/jura.xml" value="0.284375" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/layout/aaa.xml" value="0.25317028985507245" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/layout/activity_main.xml" value="0.1490036231884058" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/layout/fragment_bottombar.xml" value="0.2" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/layout/fragment_home.xml" value="0.536" />
+        <entry key="..\:/Users/yildi/AndroidStudioProjects/PolishDictionary/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
