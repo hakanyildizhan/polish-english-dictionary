@@ -2,7 +2,7 @@
 
 This is an Android app that acts as a wrapper, plus some useful features such as bookmarking and search history on top of the Oscar Swan's Polish-English dictionary found on https://www.lektorek.org/polish/. 
 
-![preview](resources/preview.gif)
+<a href="preview"><img src="resources/preview.gif" width="360" height="640"></a>
 
 App design can be viewed on Figma [here](https://www.figma.com/file/43WIc7Am6sUQDT2wlg9rof/Polish-English-Dictionary?node-id=35%3A389).
 
