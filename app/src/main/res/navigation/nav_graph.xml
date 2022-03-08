@@ -26,6 +26,9 @@
             android:name="focusOnSearchbox"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_home_search_fragment_to_searchHistoryFragment"
+            app:destination="@id/searchHistoryFragment" />
 
     </fragment>
 
@@ -54,5 +57,9 @@
                 android:defaultValue="true" />
         </action>
     </fragment>
+    <fragment
+        android:id="@+id/searchHistoryFragment"
+        android:name="com.hakansoft.polishdictionary.SearchHistoryFragment"
+        android:label="SearchHistoryFragment" />
 
 </navigation>
